@@ -12,7 +12,7 @@
 <div class="col-md-3 offset-1"><img src="{{asset($item->image)}}" height="150px" width="150px"></p></div>
 <div class="col-md-7 text-left">
     <p><b>Name :</b>{{ $item->name }}</br></p>
-    <p><b>Price</b> :{{ $item->price }}</br></p>
+    <p><b>Price</b> :$ {{ $item->price }}</br></p>
     <p><b>Category :</b>{{ $item->category->name }}</p>
     <p><b>Description :</b>{{ $item->description}}</p>
 </div></div>

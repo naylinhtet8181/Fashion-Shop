@@ -169,9 +169,9 @@
                 @endforelse
               </ul>
           </ul>
-    
+
             </div>
-     <center>{!! $items->links() !!}</center> 
+     <center>{!! $items->links() !!}</center>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">

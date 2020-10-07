@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-   
+
     public function index()
     {
             $items =Customer::latest()->paginate(5);
-    
+
             return view('admin.order.index',compact('items'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function show($id)
-    { 
+    {
         $customer=Customer::where('id',$id)->get();
         $items=Orderitem::where('order_id',$id)->get();
         $total_amount=Orderitem::where('order_id',$id)->sum('total');
@@ -30,7 +30,7 @@ class OrderController extends Controller
     {
         $item=Customer::find($id);
         $item->delete();
-        return redirect()->route('item.index')
-        ->with('Order deleted success');
+        return redirect()->route('order.index')
+        ->with('success','Order deleted success');
     }
 }

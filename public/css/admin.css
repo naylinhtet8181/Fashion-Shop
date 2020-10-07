@@ -691,3 +691,24 @@
                     .nav-link:hover {
                         color: white;
                     }
+                    
+                    @media only screen and (max-width: 420px) {
+                        .one {
+                            display: none;
+                        }
+                    }
+                    
+                    @media only screen and (min-width: 420px) {
+                        .two {
+                            display: none;
+                        }
+                    }
+                    
+                    @media only screen and (max-width:300px) {
+                        h2 {
+                            font-size: 22px;
+                        }
+                        #h2 {
+                            font-size: 12px;
+                        }
+                    }

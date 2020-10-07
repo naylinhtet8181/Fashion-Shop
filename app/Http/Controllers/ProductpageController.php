@@ -23,7 +23,7 @@ public function index(Request $request)
             $item = $item->where('price','>=',$request->min_price);
             $item = $item->where('price','<=',$request->max_price);
          }
-         $items =$item->paginate(9);   
+         $items =$item->paginate(9);
         $qty=Cart::where('user_id',Auth::user()->id)->sum('qty');
 
      return view('single-product',compact('items','categories','id_','qty'));
@@ -32,18 +32,18 @@ public function index(Request $request)
 public function showCates($id,Request $request)
     {
     if($id){
-    $items =Item::where('category_id',$id)->paginate(9);
+    $item =Item::orderBy('created_at','desc')->where('category_id',$id);
    }
    elseif($request->all){
-    $items =Item::latest()->paginate(9);
+    $item =Item::orderBy('created_at','desc');
   }
 
        if($request->min_price && $request->max_price){
 
-            $items = $items->where('price','>=',$request->min_price);
-            $items = $items->where('price','<=',$request->max_price);
+            $item = $item->where('price','>=',$request->min_price);
+            $item = $item->where('price','<=',$request->max_price);
         }
-
+    $items=$item->paginate(9);
         $categories =Category::all();
         $id_=$id;
         $qty=Cart::where('user_id',Auth::user()->id)->sum('qty');

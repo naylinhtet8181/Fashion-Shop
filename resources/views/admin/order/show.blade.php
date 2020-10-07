@@ -22,7 +22,7 @@
               <input type="text" id="adr" name="address" value="{{ $item->address }}" disabled>
               <label for="city"><i class="fa fa-institution"></i> City</label>
               <input type="text" id="city" name="city" value="{{ $item->city }}" disabled>
-  
+
               <div class="row">
                 <div class="col-50">
                   <label for="state">State</label>
@@ -34,7 +34,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-50">
               <h3>Payment</h3>
               <label for="fname">Accepted Cards</label>
@@ -66,7 +66,11 @@
          <a href="/admin/order"><input type="submit" value="Back" class="btn" name="submit"></a>
       </div>
     </div>
+
     <div class="col-25">
+        @foreach($customer as $item)
+  <p><span id="order">Order Sent  </span>{{$item->created_at}}</p>
+        @endforeach
       <div class="container">
         <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{ $qty }}</b></span></h4>
         @foreach($items as $item)
@@ -77,7 +81,7 @@
       </div>
     </div>
   </div>
-  
+
   </body>
   </html>
   <style>
@@ -86,11 +90,11 @@
       font-size: 17px;
       padding: 8px;
     }
-  
+
     * {
       box-sizing: border-box;
     }
-  
+
     .row {
       display: -ms-flexbox; /* IE10 */
       display: flex;
@@ -98,35 +102,35 @@
       flex-wrap: wrap;
       margin: 0 -16px;
     }
-  
+
     .col-25 {
       -ms-flex: 25%; /* IE10 */
       flex: 25%;
     }
-  
+
     .col-50 {
       -ms-flex: 50%; /* IE10 */
       flex: 50%;
     }
-  
+
     .col-75 {
       -ms-flex: 75%; /* IE10 */
       flex: 75%;
     }
-  
+
     .col-25,
     .col-50,
     .col-75 {
       padding: 0 16px;
     }
-  
+
     .container {
       background-color: #f2f2f2;
       padding: 5px 20px 15px 20px;
       border: 1px solid lightgrey;
       border-radius: 3px;
     }
-  
+
     input[type=text] {
       width: 100%;
       margin-bottom: 20px;
@@ -134,18 +138,18 @@
       border: 1px solid #ccc;
       border-radius: 3px;
     }
-  
+
     label {
       margin-bottom: 10px;
       display: block;
     }
-  
+
     .icon-container {
       margin-bottom: 20px;
       padding: 7px 0;
       font-size: 24px;
     }
-  
+
     .btn {
       background-color:#ff6666;
       color: white;
@@ -157,24 +161,24 @@
       cursor: pointer;
       font-size: 17px;
     }
-  
+
     .btn:hover {
       background-color:#ff6666;
     }
-  
+
     a {
       color: #2196F3;
     }
-  
+
     hr {
       border: 1px solid lightgrey;
     }
-  
+
     span.price {
       float: right;
       color: grey;
     }
-  
+
     /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
     @media (max-width: 800px) {
       .row {
@@ -184,5 +188,8 @@
         margin-bottom: 20px;
       }
     }
+
+    #order{
+        color:#ff6666;
+    }
     </style>
-  

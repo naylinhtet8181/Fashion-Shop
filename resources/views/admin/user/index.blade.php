@@ -14,8 +14,7 @@
           <tr>
             <th>No</th>
   <th>Name</th>
-  <th>Email</th>
-  <th>Date</th>
+  <th class="one">Email</th>
   <th>Action</th>
           </tr>
         </thead>
@@ -24,10 +23,10 @@
           <tr>
             <td>{{ ++$i }}</td>
   <td>{{$item->name}}</td>
-  <td>{{$item->email}}</td>
-  <td>{{$item->created_at}}</td>
+  <td class="one">{{$item->email}}</td>
       <td>
               <p class="d-inline">
+                <a href="{{route('user.show',$item->id)}}" class="btn btn-success two" >Show</a>
               <form action="{{route('user.destroy',$item->id)}}" method="post" style="display: inline;">
               @method('DELETE')
               @csrf

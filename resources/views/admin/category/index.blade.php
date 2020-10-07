@@ -14,7 +14,7 @@
 
     <div class="d-flex justify-content-around mb-2">
         <div class="p-2"><h2>Category</h2></div>
-        <div class="p-2"><a href="{{route('category.create')}}" class="btn btn-info">
+        <div class="p-2"><a href="{{route('category.create')}}" class="btn btn-info" id="h2">
             Add New Category</a></div>
       </div>
 <table class="table mt-5">

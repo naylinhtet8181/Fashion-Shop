@@ -9,7 +9,7 @@
 @endif
 <div class="d-flex justify-content-around mb-2">
     <div class="p-2"><h2>Product</h2></div>
-    <div class="p-2"><a href="{{route('item.create')}}" class="btn btn-info">
+    <div class="p-2"><a href="{{route('item.create')}}" class="btn btn-info" id="h2">
         Add New Product</a></div>
   </div>
 <table class="table mt-5">
@@ -17,8 +17,8 @@
           <tr>
             <th>No</th>
   <th>Name</th>
-  <th>Price</th>
-  <th>Image</th>
+  <th class="one">Price</th>
+  <th class="one">Image</th>
   <th>Action</th>
           </tr>
         </thead>
@@ -27,8 +27,8 @@
           <tr>
             <td>{{ ++$i }}</td>
   <td>{{$item->name}}</td>
-  <td>$ {{$item->price}}</td>
-  <td><img src="{{asset($item->image)}}" width="50px" height="50px"></td>
+  <td class="one">$ {{$item->price}}</td>
+  <td class="one"><img src="{{asset($item->image)}}" width="50px" height="50px"></td>
       <td>
               <p class="d-inline">
             <a href="{{route('item.show',$item->id)}}" class="btn btn-success">Show</a>

@@ -214,6 +214,7 @@
             </br>
               </ul>
            </div>
+           <center>{!! $cat_item->links() !!}</center>
           </div>
         </div>
          </div>
