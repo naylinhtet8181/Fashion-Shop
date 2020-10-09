@@ -12,7 +12,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label>Category:</label>
-                        <select class="form-control" name="category" placeholder="hello">
+                        <select class="form-control" name="category" placeholder="hello" required>
                        @foreach ($categories as $category)
                         <option value="{{ $category->id }}">
                             {{ $category->name }}
@@ -24,25 +24,25 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <input type="text" name="name" class="form-control" placeholder="Name" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Price:</strong>
-                        <input type="text" name="price" class="form-control" placeholder="price">
+                        <input type="text" name="price" class="form-control" placeholder="price" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Description:</strong>
-                        <textarea class="form-control"  rows="4" name="description"></textarea>
+                        <textarea class="form-control"  rows="4" name="description" required></textarea>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <label>Image</label>
-                    <input type="file" name="image" class="form-control">
+                    <input type="file" name="image" class="form-control" required>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">

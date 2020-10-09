@@ -28,7 +28,9 @@ class WishlistController extends Controller
     $description=$items[0]['description'];
     $image=$items[0]['image'];
 
-    $wh_name=Wishlist::where('name',$name)->first();
+    $wh_name=Wishlist::where('name',$name)
+    -> where('user_id',Auth::user()->id)
+    ->first();
 
 if($wh_name===null){
         Wishlist::create([
