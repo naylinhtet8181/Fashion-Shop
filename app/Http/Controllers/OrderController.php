@@ -30,7 +30,11 @@ class OrderController extends Controller
     {
         $item=Customer::find($id);
         $item->delete();
+        $items=Orderitem::where('order_id',$id);
+        $items->delete();
         return redirect()->route('order.index')
         ->with('success','Order deleted success');
     }
+   
+   
 }

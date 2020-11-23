@@ -45,10 +45,6 @@
         </tbody>
       </table>
 
-<style>
-
-</style>
-
       {!! $items->links() !!}
 
 @endsection

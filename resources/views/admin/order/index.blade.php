@@ -27,7 +27,7 @@
       <td>
               <p class="d-inline">
                 <a href="{{route('order.show',$item->id)}}" class="btn btn-success">Show</a>
-              <form action="{{route('item.destroy',$item->id)}}" method="post" style="display: inline;">
+              <form action="{{route('order.destroy',$item->id)}}" method="post" style="display: inline;">
               @method('DELETE')
               @csrf
               <input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger" onclick="return confirm('Are You Sure?');">

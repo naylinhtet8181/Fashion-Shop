@@ -8,18 +8,13 @@ use App\Item;
 
 use App\Category;
 
-
 class ItemController extends Controller
 {
-
-
     Public function index(){
-        $items =Item::latest()->paginate(5);
-
-        return view('admin.product.index',compact('items'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-
-
+        $categories = Category::all();
+        $items=Item::latest()->paginate(5);
+        return view('admin.product.index',compact('categories','items'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
  }
 
  public function create()

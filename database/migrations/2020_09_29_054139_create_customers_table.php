@@ -23,7 +23,7 @@ class CreateCustomersTable extends Migration
             $table->string('state');
             $table->integer('zip');
             $table->string('name_on_card');
-            $table->integer('credit_card_number');
+            $table->string('credit_card_number');
             $table->string('exp_month');
             $table->integer('exp_year');
             $table->integer('cvv');

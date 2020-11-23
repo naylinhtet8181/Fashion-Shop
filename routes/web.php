@@ -18,6 +18,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/item2', function () {
+    return view('admin2.product');
+});
+
+Route::get('/admin3','AdminController@count');
+
+Route::get('/chart', function () {
+    return view('charts');
+});
+
+Route::get('/blank', function () {
+    return view('blank');
+});
+
+Route::get('/card', function () {
+    return view('cards');
+});
+
+Route::get('/table', function () {
+    return view('tables');
+});
+
+Route::get('/other', function () {
+    return view('utilities-other');
+});
+
 Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');
